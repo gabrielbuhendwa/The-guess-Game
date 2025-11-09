@@ -49,7 +49,7 @@ function submitGuess(){
 
     // Check if the input is not a number (NaN) or outside the valid range (0-10) and handling error
     if (isNaN(guess) || guess < 0 || guess > 10){
-        showMessage('Please enter a valid number between 0 and 10.', 'error');
+        showMessage('Please enter a valid number between 0 and 10', 'error');
         return;
     }
     // Decreasing the number of attempts
@@ -70,17 +70,17 @@ function submitGuess(){
     else if (attemptsLeft === 0){
         // If out of attempts:
         gameActive = false; // Set game to inactive
-        showMessage(`You lost. The number was ${targetNumber}.`, 'error');
-        gameOverMessage.textContent = `The number was ${targetNumber}. Better luck next time`; 
+        showMessage(`You lost, The number was ${targetNumber}`, 'error');
+        gameOverMessage.textContent = `The number was ${targetNumber}, Better luck next time`; 
         gameOverDiv.classList.add('show'); // Show the game over div
         guessInput.disabled = true; // Disable the input field
         submitBtn.disabled = true; // Disable the submit button
     } 
     // Check if the guess is too low
     else if (guess < targetNumber){
-        showMessage('Your guess is too low, try a higher number.', 'warning');
+        showMessage('Your guess is too low, try a higher number', 'warning');
     }else{
-        showMessage('Your guess is too high, try a lower number.', 'warning');
+        showMessage('Your guess is too high, try a lower number', 'warning');
     }
     // Clear the input field for the next guess
     guessInput.value = '';
