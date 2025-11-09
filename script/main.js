@@ -58,7 +58,7 @@ function submitGuess(){
 
     // Check if the guess is correct
     if (guess === targetNumber){
-        // If correct:
+        // If correct
         gameActive = false; // Set game to inactive
         showMessage('Congratulations, You guessed correctly', 'success');
         gameWonMessage.textContent = `You guessed the number ${targetNumber} correctly!`; 
@@ -79,8 +79,7 @@ function submitGuess(){
     // Check if the guess is too low
     else if (guess < targetNumber){
         showMessage('Your guess is too low, try a higher number.', 'warning');
-    } 
-    else{
+    }else{
         showMessage('Your guess is too high, try a lower number.', 'warning');
     }
     // Clear the input field for the next guess
